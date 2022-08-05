@@ -1,0 +1,13 @@
+.winner {
+  padding: 2rem;
+  width: 100%;
+  font-size: 2vw;
+  display: flex;
+}
+.winner p {
+  align-self: center;
+}
+.btn {
+  font-size: 1.5vw;
+  align-self: center;
+}

@@ -1,0 +1,8 @@
+.accounts {
+  border-radius: 10px;
+  margin: 2rem;
+  padding: 1rem;
+  flex-shrink: 3;
+  flex: 2;
+  font-size: 1.2vw;
+}

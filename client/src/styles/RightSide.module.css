@@ -1,0 +1,10 @@
+.rightside {
+  flex-shrink: 1;
+  flex: 4;
+  padding: 1rem;
+
+  margin: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}

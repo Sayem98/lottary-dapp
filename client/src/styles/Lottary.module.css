@@ -1,0 +1,26 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100%;
+}
+.lottary {
+  align-self: flex-start !important;
+  width: 100%;
+
+  font-size: 1vw;
+}
+.btn {
+  font-size: 1.5vw;
+  align-self: center;
+}
+.title {
+  font-size: 2vw;
+  align-self: center;
+  display: inline;
+  margin-left: 40%;
+}
+.players {
+  font-size: 0.8vw;
+}
