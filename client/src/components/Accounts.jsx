@@ -10,16 +10,26 @@ function Accounts() {
     state: { contract, accounts },
   } = useEth();
   const [lottary, setLottary] = useState();
+  const [change, setChange] = useState("");
   useEffect(() => {
     const myTotalLottary = async () => {
       setLottary(
         await contract.methods.getLottaryNumber().call({ from: accounts[0] })
       );
     };
+    const checkEvent = async () => {
+      await contract.events.Perticepated((error, event) => {
+        console.log(event);
+        setChange((prevChange) => {
+          return !prevChange;
+        });
+      });
+    };
     if (contract) {
       myTotalLottary();
+      checkEvent();
     }
-  }, [contract, accounts]);
+  }, [contract, accounts, change]);
 
   return (
     <div className={classes.accounts}>

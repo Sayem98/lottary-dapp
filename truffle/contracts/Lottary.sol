@@ -7,6 +7,8 @@ contract Lottary{
     address public manager;
     address payable[] public participents;
     address[] public winners;
+    event Perticepated(address indexed _participent, uint _ammount);
+    event WinnerSelected(address indexed _winner, uint _win);
     // address[] public player;
 
     constructor(){
@@ -21,6 +23,7 @@ contract Lottary{
     receive() external payable{
         require(msg.value == 1 ether, 'Only 1 ether is accepted!');
         participents.push(payable(msg.sender));
+        emit Perticepated(msg.sender, msg.value);
     }
 
     function getLottaryNumber() public view returns(uint){
@@ -34,7 +37,7 @@ contract Lottary{
     }
 
     function getBalance() public view returns(uint){
-        require(msg.sender == manager, "You don't have permission, Son!");
+        //require(msg.sender == manager, "You don't have permission, Son!");
         return address(this).balance;
     }
 
@@ -52,8 +55,10 @@ contract Lottary{
         winner = participents[winner_index];
         winners.push(winner);
         //Diffrent ways of transfer?
-        winner.transfer(getBalance());
+        uint ammount = getBalance();
+        winner.transfer(ammount);
         participents = new address payable[](0);
+        emit WinnerSelected(winner, ammount);
         
         return winner;
         
