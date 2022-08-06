@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEth } from "../contexts/EthContext";
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import classes from "../styles/WinnerSelection.module.css";
 function WinnerSelection() {
   const [winner, setWinner] = useState();
@@ -13,7 +13,7 @@ function WinnerSelection() {
     setWinner(await contract.methods.Winner().send({ from: accounts[0] }));
   };
   return (
-    <Card className={classes.winner}>
+    <div className={classes.winner}>
       <p>
         {winner
           ? `The winner is ${winner}`
@@ -22,7 +22,7 @@ function WinnerSelection() {
       <Button onClick={handleClick} className={classes.btn}>
         Winner
       </Button>
-    </Card>
+    </div>
   );
 }
 

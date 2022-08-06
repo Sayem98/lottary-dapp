@@ -64,15 +64,12 @@ function Lorrary() {
     }
   };
   return (
-    <div className={classes.lottary}>
-      <CustomCard
-        classes={classes}
-        balance={balance}
-        players={players}
-        trnx={trnx}
-        handleClick={handleClick}
-      />
-    </div>
+    <CustomCard
+      classes={classes}
+      
+      trnx={trnx}
+      handleClick={handleClick}
+    />
   );
 }
 

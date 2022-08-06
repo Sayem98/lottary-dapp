@@ -11,6 +11,8 @@ function Accounts() {
   } = useEth();
   const [lottary, setLottary] = useState();
   const [change, setChange] = useState("");
+  const [balance, setBalance] = useState();
+  const [players, setPlayers] = useState();
   useEffect(() => {
     const myTotalLottary = async () => {
       setLottary(
@@ -25,9 +27,32 @@ function Accounts() {
         });
       });
     };
+    const getBalance = async () => {
+      try {
+        let bal = await contract.methods
+          .getBalance()
+          .call({ from: accounts[0] });
+        setBalance(bal);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const getTotalPlayer = async () => {
+      try {
+        let all_players = await contract.methods
+          .TotalParticipents()
+          .call({ from: accounts[0] });
+        setPlayers(all_players);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     if (contract) {
       myTotalLottary();
       checkEvent();
+      getBalance();
+      getTotalPlayer();
     }
   }, [contract, accounts, change]);
 
@@ -51,8 +76,27 @@ function Accounts() {
           </Card.Body>
         </Card>
       </div>
-      <div className={classes.activity}>
-        My Lottary: {lottary ? lottary : "No"}
+      <div className={classes.tickets}>
+        My Tickets: {lottary ? lottary + " Times" : "Waiting"}
+      </div>
+      <div className={classes.players}>
+        <h1>Current</h1>
+        <h2>Balance: {balance ? balance + " ETH" : "Waiting"}</h2>
+        <h2>Total player: {players ? players.length : "Waiting"}</h2>
+        {players && players.length ? (
+          <>
+            <h2>Players</h2>
+            {players
+              ? players.map((player, index) => (
+                  <ListGroup className={classes.player} key={index}>
+                    {player}
+                  </ListGroup>
+                ))
+              : "Waiting"}
+          </>
+        ) : (
+          "No Players"
+        )}
       </div>
     </div>
   );

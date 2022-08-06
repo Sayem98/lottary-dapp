@@ -1,8 +1,28 @@
 .accounts {
-  border-radius: 10px;
   margin: 2rem;
   padding: 1rem;
   flex-shrink: 3;
   flex: 2;
   font-size: 1.2vw;
+  display: flex;
+  flex-direction: column;
+}
+.accounts {
+  text-align: center;
+}
+.tickets {
+  background: white;
+
+  width: 100%;
+
+  text-align: center;
+  border: 0.2px solid black;
+  font-size: 2vw;
+  margin-top: 2%;
+}
+.players {
+  border: 0.1px solid black;
+  width: 100%;
+  margin-top: 2%;
+  padding: 1rem;
 }

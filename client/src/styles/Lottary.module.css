@@ -1,26 +1,25 @@
-.info {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  height: 100%;
-}
 .lottary {
-  align-self: flex-start !important;
   width: 100%;
 
   font-size: 1vw;
+
+  border: 5px solid #424649;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
+.info {
+  font-size: 2vw;
+  color: aqua;
+}
+
 .btn {
-  font-size: 1.5vw;
-  align-self: center;
+  font-size: 2vw;
 }
 .title {
   font-size: 2vw;
   align-self: center;
-  display: inline;
-  margin-left: 40%;
-}
-.players {
-  font-size: 0.8vw;
 }
