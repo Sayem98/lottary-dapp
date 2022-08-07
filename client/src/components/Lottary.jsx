@@ -4,7 +4,7 @@ import { useEth } from "../contexts/EthContext";
 import CustomCard from "./CustomCard";
 
 import classes from "../styles/Lottary.module.css";
-import { useEffect } from "react";
+
 import { useState } from "react";
 
 function Lorrary() {
@@ -12,31 +12,7 @@ function Lorrary() {
     state: { contract, accounts, web3 },
   } = useEth();
 
-  const [balance, setBalance] = useState();
-  const [players, setPlayer] = useState();
   const [trnx, setTrnx] = useState();
-
-  useEffect(() => {
-    const getBalance = async () => {
-      setBalance(
-        web3.utils.fromWei(
-          await contract.methods.getBalance().call({ from: accounts[0] })
-        ),
-        "ether"
-      );
-    };
-
-    const getAllPlayer = async () => {
-      setPlayer(
-        await contract.methods.TotalParticipents().call({ from: accounts[0] })
-      );
-    };
-
-    if (contract) {
-      getBalance();
-      getAllPlayer();
-    }
-  }, [contract, accounts, web3, trnx]);
 
   // console.log(state.accounts);
   const handleClick = () => {
@@ -63,14 +39,7 @@ function Lorrary() {
     } else {
     }
   };
-  return (
-    <CustomCard
-      classes={classes}
-      
-      trnx={trnx}
-      handleClick={handleClick}
-    />
-  );
+  return <CustomCard classes={classes} trnx={trnx} handleClick={handleClick} />;
 }
 
 export default Lorrary;
