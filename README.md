@@ -6,7 +6,7 @@ React and web3 was used for the front-end. It is published in a test network so 
 - Please install Metamask browser extension.
 - It is deployed in Rinkeby test net.
 - Goto rinkeby test network.
-- Get fake eth from [Rinkeby Faucet]https://faucets.chain.link/rinkeby
+- Get fake eth from [Rinkeby Faucet](https://faucets.chain.link/rinkeby)
 - Click join button to join the lottary.
 - Every ticket costs 0.1ETH.
 - Wait for admin to draw the lottary.
