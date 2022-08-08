@@ -21,7 +21,7 @@ contract Lottary{
 
     //Special function only once can be written on a contract.
     receive() external payable{
-        require(msg.value == 1 ether, 'Only 1 ether is accepted!');
+        require(msg.value == 100000000000000000 wei, 'Only 1 ether is accepted!');
         participents.push(payable(msg.sender));
         emit Perticepated(msg.sender, msg.value);
     }
