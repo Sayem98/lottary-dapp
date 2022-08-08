@@ -29,7 +29,7 @@ function Accounts() {
         });
       });
       await contract.events.WinnerSelected((error, event) => {
-        console.log(event);
+        //console.log(event);
         setChange((prevChange) => {
           return !prevChange;
         });

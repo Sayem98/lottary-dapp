@@ -15,11 +15,11 @@ function Lorrary() {
   const [trnx, setTrnx] = useState();
 
   // console.log(state.accounts);
-  const handleClick = () => {
-    console.log("clicked");
+  const handleClick = (value) => {
+    console.log(value);
     const joinLottary = async () => {
       console.log(contract);
-      let one_eth = web3.utils.toWei("1", "ether");
+      let one_eth = web3.utils.toWei("0.1", "ether");
       await web3.eth
         .sendTransaction({
           from: accounts[0],
