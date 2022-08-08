@@ -3,6 +3,8 @@
 This is a decentralized application that uses smart contract(Solidity language) to work. Solidity was used for the Dapp and truffle was used for compiling and migrating.
 React and web3 was used for the front-end. It is published in a test network so it is safe to have fun with it.
 
+## How to intaract?
+
 - Please install Metamask browser extension.
 - It is deployed in Rinkeby test net.
 - Goto rinkeby test network.
