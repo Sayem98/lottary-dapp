@@ -9,6 +9,7 @@ React and web3 was used for the front-end. It is published in a test network so 
 - It is deployed in Rinkeby test net.
 - Goto rinkeby test network.
 - Get fake eth from [Rinkeby Faucet](https://faucets.chain.link/rinkeby)
+- App link [Click](https://62f1661059e7d10504c581c2--win-lottary.netlify.app/)
 - Click join button to join the lottary.
 - Every ticket costs 0.1ETH.
 - Wait for admin to draw the lottary.
